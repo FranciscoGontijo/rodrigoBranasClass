@@ -10,8 +10,8 @@
             return rendimento
         }
 
-        function calcularSaldo (salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
-            saldo = salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;        
+        function calcularSaldo (saldoInicial, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
+            saldo = saldoInicial + salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;        
             estaNegativo = saldo < 0;
             if (estaNegativo) {
                 juros = calcularJuros(saldo);
@@ -24,7 +24,7 @@
 
 
 
-
+        saldoInicial1 = 0;
         // Janeiro
         salario1 = 3000;
         aluguel1 = 1000;
@@ -35,7 +35,7 @@
         lazer1 = 300;
         alimentacao1 = 500;
     
-        saldoJaneiro = calcularSaldo (salario1, aluguel1, contaDeAgua1, contaDeLuz1, internet1, transporte1, lazer1, alimentacao1)
+        saldoJaneiro = calcularSaldo (saldoInicial1, salario1, aluguel1, contaDeAgua1, contaDeLuz1, internet1, transporte1, lazer1, alimentacao1)
         console.log("Saldo total de Janeiro: " + saldoJaneiro)
 
         // Fevereiro
@@ -47,7 +47,7 @@
         transporte2 = 500;
         lazer2 = 0;
         alimentacao2 = 1000;
-        saldoFevereiro = calcularSaldo (salario2, aluguel2, contaDeAgua2, contaDeLuz2, internet2, transporte2, lazer2, alimentacao2)
+        saldoFevereiro = calcularSaldo (saldoJaneiro, salario2, aluguel2, contaDeAgua2, contaDeLuz2, internet2, transporte2, lazer2, alimentacao2)
         console.log("Saldo total de Janeiro: " + saldoFevereiro)
 
          // Marco
@@ -59,7 +59,7 @@
         transporte3= 500;
         lazer3= 800;
         alimentacao3= 1000;
-        saldoMarco = calcularSaldo (salario3, aluguel3, contaDeAgua3, contaDeLuz3, internet3, transporte3, lazer3, alimentacao3)
+        saldoMarco = calcularSaldo (saldoFevereiro, salario3, aluguel3, contaDeAgua3, contaDeLuz3, internet3, transporte3, lazer3, alimentacao3)
         console.log("Saldo total de Janeiro: " + saldoMarco)
 
         acumuladoAno = saldoJaneiro + saldoFevereiro + saldoMarco;
