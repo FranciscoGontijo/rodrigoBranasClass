@@ -2,23 +2,27 @@
     <script>
         function calcularJuros(valor) {
             juros = valor * 0.1;
+            console.log("Juros: " + juros)
             return juros
         }
 
         function calcularRendimento(valor) {
             rendimento = valor * 0.005;
+            console.log("Rendimentos: " + rendimento)
             return rendimento
         }
 
-        function calcularSaldo (saldoInicial, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
-            saldo = saldoInicial + salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;        
+        function calcularSaldo (mes, saldoInicial, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
+            console.log(mes);
+            saldo = saldoInicial + salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;     
+            console.log("Saldo do mes de " + mes + ": " + saldo)   
             estaNegativo = saldo < 0;
             if (estaNegativo) {
                 juros = calcularJuros(saldo);
                 saldo = saldo + juros;
             } else {
-                rendimentos = calcularRendimento(saldo);
-                saldo = saldo + rendimentos;
+                rendimento = calcularRendimento(saldo);
+                saldo = saldo + rendimento;
             } return saldo;
         }
 
@@ -35,7 +39,7 @@
         lazer1 = 300;
         alimentacao1 = 500;
     
-        saldoJaneiro = calcularSaldo (saldoInicial1, salario1, aluguel1, contaDeAgua1, contaDeLuz1, internet1, transporte1, lazer1, alimentacao1)
+        saldoJaneiro = calcularSaldo ("Janeiro", saldoInicial1, salario1, aluguel1, contaDeAgua1, contaDeLuz1, internet1, transporte1, lazer1, alimentacao1)
         console.log("Saldo total de Janeiro: " + saldoJaneiro)
 
         // Fevereiro
@@ -47,8 +51,8 @@
         transporte2 = 500;
         lazer2 = 0;
         alimentacao2 = 1000;
-        saldoFevereiro = calcularSaldo (saldoJaneiro, salario2, aluguel2, contaDeAgua2, contaDeLuz2, internet2, transporte2, lazer2, alimentacao2)
-        console.log("Saldo total de Janeiro: " + saldoFevereiro)
+        saldoFevereiro = calcularSaldo ("Fevereiro", saldoJaneiro, salario2, aluguel2, contaDeAgua2, contaDeLuz2, internet2, transporte2, lazer2, alimentacao2)
+        console.log("Saldo total de Feveireiro: " + saldoFevereiro)
 
          // Marco
         salario3= 4000;
@@ -59,10 +63,10 @@
         transporte3= 500;
         lazer3= 800;
         alimentacao3= 1000;
-        saldoMarco = calcularSaldo (saldoFevereiro, salario3, aluguel3, contaDeAgua3, contaDeLuz3, internet3, transporte3, lazer3, alimentacao3)
-        console.log("Saldo total de Janeiro: " + saldoMarco)
+        saldoMarco = calcularSaldo ("Marco", saldoFevereiro, salario3, aluguel3, contaDeAgua3, contaDeLuz3, internet3, transporte3, lazer3, alimentacao3)
+        console.log("Saldo total de Marco: " + saldoMarco)
 
-        acumuladoAno = saldoJaneiro + saldoFevereiro + saldoMarco;
+        acumuladoAno = saldoMarco;
         console.log('Saldo do Ano');
         console.log(acumuladoAno);
     </script>
