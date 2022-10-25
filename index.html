@@ -20,14 +20,14 @@
         function calcularSaldo (mes, saldoInicial, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
             console.log(mes);
             saldo = saldoInicial + salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;     
-            console.log("Saldo do mes de " + mes + ": " + saldo)   
+            console.log("Saldo do mes de " + mes + ": " + arredondar(saldo))   
             estaNegativo = saldo < 0;
             if (estaNegativo) {
                 juros = calcularJuros(saldo);
-                saldo = saldo + juros;
+                saldo = arredondar(saldo + juros);
             } else {
                 rendimento = calcularRendimento(saldo);
-                saldo = saldo + rendimento;
+                saldo = arredondar(saldo + rendimento);
             } return saldo;
         }
 
