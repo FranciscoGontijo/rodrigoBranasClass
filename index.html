@@ -13,18 +13,19 @@
         console.log('Janeiro');
         console.log(saldoJaneiro);
         // Avaliar se tem juros ou rendimento
-        if (saldoJaneiro < 0) {
-            console.log("Juros");
-            juros1 = saldoJaneiro * 0.01;
-            console.log(juros1);
-            saldoJaneiro += juros1;
-        } else {
-            console.log("Rendimento");
-            rendimento1 = saldoJaneiro * 0.005;
-            console.log(rendimento1);
-            saldoJaneiro += rendimento1;
-        }
-        console.log(saldoJaneiro);
+        estaNegativo1 = saldoJaneiro < 0
+		if (estaNegativo1) {
+			console.log("juros de janeiro")
+			juros1 = saldoJaneiro * 0.1
+			console.log(juros1)
+			saldoJaneiro = saldoJaneiro + juros1
+		} else {
+			console.log("rendimentos de janeiro")
+			rendimentos1 = saldoJaneiro * 0.005
+			console.log(rendimentos1)
+			saldoJaneiro = saldoJaneiro + rendimentos1
+		}
+		console.log(saldoJaneiro)
         // Fevereiro
         salario2 = 3000;
         aluguel2 = 1200;
@@ -37,18 +38,21 @@
         saldoFevereiro = salario2 - aluguel2 - contaDeAgua2 - contaDeLuz2 - internet2 - transporte2 - lazer2 - alimentacao2;
         console.log('Fevereiro');
         console.log(saldoFevereiro);
-        if (saldoFevereiro < 0) {
-            console.log("Juros");
-            juros2 = saldoFevereiro * 0.01;
-            console.log(juros2);
-            saldoFevereiro += juros2;
-        } else {
-            console.log("Rendimento");
-            rendimento2 = saldoFevereiro * 0.005;
-            console.log(rendimento2);
-            saldoFevereiro += juros2;
-        }
-        console.log(saldoFevereiro);
+
+        estaNegativo2 = saldoFevereiro < 0;
+        if (estaNegativo2) {
+			console.log("juros de fevereiro");
+			juros2 = saldoFevereiro * 0.1;
+			console.log(juros2);
+			saldoFevereiro = saldoFevereiro + juros2;
+		} else {
+			console.log("rendimentos de fevereiro");
+			rendimentos2 = saldoFevereiro * 0.005;
+            console.log(rendimentos2)
+			saldoFevereiro = saldoFevereiro + rendimentos2;
+		}
+		console.log(saldoFevereiro);
+
         acumuladoAno = saldoJaneiro + saldoFevereiro;
         console.log('Saldo do Ano');
         console.log(acumuladoAno);
