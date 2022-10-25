@@ -9,7 +9,8 @@
         transporte = 300
         lazer = 300
         alimentacao = 500
-        console.log(salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao)
+        saldoJaneiro = salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao
+        console.log(saldoJaneiro)
         // Fevereiro
         salario = 3000
         aluguel = 1200
@@ -19,6 +20,9 @@
         transporte = 500
         lazer = 0
         alimentacao = 1000
-        console.log(salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao)
+        saldoFevereiro = salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao
+        console.log(saldoFevereiro)
+        ano = saldoJaneiro + saldoFevereiro
+        console.log(ano)
     </script>
 </html>
