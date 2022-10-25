@@ -18,7 +18,12 @@
         function somarLancamentos(arr) {
             let valor = 0;
             for (var i = 0; i < arr.length; i++) {
-                valor += arr[i].valor;
+                if (arr[i].tipo === 'receita') {
+                    valor += arr[i].valor;
+                } 
+                if (arr[i].tipo === 'despesa') {
+                    valor -= arr[i].valor;
+                }
             } return valor
         }
 
@@ -40,48 +45,48 @@
         saldoInicial = 0;
 
         lancamentosJaneiro = [
-            {valor: 3000},
-            {valor: -1000},
-            {valor: -200},
-            {valor: -100},
-            {valor: -100},
-            {valor: -300},
-            {valor: -300},
-            {valor: -500},
-            {valor: -300},
-            {valor: -100},
+            {tipo: 'receita',valor: 3000},
+            {tipo: 'despesa',valor: 1000},
+            {tipo: 'despesa',valor: 200},
+            {tipo: 'despesa',valor: 100},
+            {tipo: 'despesa',valor: 100},
+            {tipo: 'despesa',valor: 300},
+            {tipo: 'despesa',valor: 300},
+            {tipo: 'despesa',valor: 500},
+            {tipo: 'despesa',valor: 300},
+            {tipo: 'despesa',valor: 100},
         ]
 
 		saldo1 = calcularSaldo("janeiro", saldoInicial, lancamentosJaneiro);
 		console.log(saldo1);
 
         lancamentosFevereiro = [
-            {valor: 3000},
-            {valor: -1200},
-            {valor: -250},
-            {valor: -100},
-            {valor: -100},
-            {valor: -500},
-            {valor: 0},
-            {valor: -1000},
-            {valor: -400},
-            {valor: 0},
+            {tipo: 'receita',valor: 3000},
+            {tipo: 'despesa',valor: 1200},
+            {tipo: 'despesa',valor: 250},
+            {tipo: 'despesa',valor: 100},
+            {tipo: 'despesa',valor: 100},
+            {tipo: 'despesa',valor: 500},
+            {tipo: 'despesa',valor: 0},
+            {tipo: 'despesa',valor: 1000},
+            {tipo: 'despesa',valor: 400},
+            {tipo: 'despesa',valor: 0},
         ]
 
 		saldo2 = calcularSaldo("feveiro", saldo1, lancamentosFevereiro);
 		console.log(saldo2);
 
         lancamentosMarco = [
-            {valor: 4000},
-            {valor: -1200},
-            {valor: -200},
-            {valor: -100},
-            {valor: -200},
-            {valor: -500},
-            {valor: -800},
-            {valor: -1000},
-            {valor: -400},
-            {valor: 0},
+            {tipo: 'receita',valor: 4000},
+            {tipo: 'despesa',valor: 1200},
+            {tipo: 'despesa',valor: 200},
+            {tipo: 'despesa',valor: 100},
+            {tipo: 'despesa',valor: 200},
+            {tipo: 'despesa',valor: 500},
+            {tipo: 'despesa',valor: 800},
+            {tipo: 'despesa',valor: 1000},
+            {tipo: 'despesa',valor: 400},
+            {tipo: 'despesa',valor: 0},
         ];
 
 		saldo3 = calcularSaldo("marco", saldo2, lancamentosMarco);
