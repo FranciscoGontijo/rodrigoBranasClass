@@ -10,20 +10,14 @@
             return rendimento
         }
 
-        function calcularSaldo (mes, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
-            saldo = salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;
-            console.log(mes);
-            console.log(saldo);
+        function calcularSaldo (salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
+            saldo = salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;        
             estaNegativo = saldo < 0;
             if (estaNegativo) {
-                console.log("juros de " + mes);
                 juros = calcularJuros(saldo);
-                console.log(juros);
                 saldo = saldo + juros;
             } else {
-                console.log("rendimentos de " + mes);
                 rendimentos = calcularRendimento(saldo);
-                console.log(rendimentos);
                 saldo = saldo + rendimentos;
             } return saldo;
         }
@@ -40,26 +34,9 @@
         transporte1 = 300;
         lazer1 = 300;
         alimentacao1 = 500;
-        // saldoJaneiro = salario1 - aluguel1 - contaDeAgua1 - contaDeLuz1 - internet1 - transporte1 - lazer1 - alimentacao1;
-        // console.log('Janeiro');
-        // console.log(saldoJaneiro);
-        // // Avaliar se tem juros ou rendimento
-        // estaNegativo1 = saldoJaneiro < 0
-		// if (estaNegativo1) {
-		// 	console.log("juros de janeiro")
-		// 	juros1 = saldoJaneiro * 0.1
-		// 	console.log(juros1)
-		// 	saldoJaneiro = saldoJaneiro + juros1
-		// } else {
-		// 	console.log("rendimentos de janeiro")
-		// 	rendimentos1 = saldoJaneiro * 0.005
-		// 	console.log(rendimentos1)
-		// 	saldoJaneiro = saldoJaneiro + rendimentos1
-		// }
-		// console.log(saldoJaneiro)
-
-        saldoJaneiro = calcularSaldo ('Janeiro', 3000, 1000, 200, 100, 100, 300, 300, 500)
-        console.log(saldoJaneiro)
+    
+        saldoJaneiro = calcularSaldo (3000, 1000, 200, 100, 100, 300, 300, 500)
+        console.log("Saldo total de Janeiro: " + saldoJaneiro)
 
         // Fevereiro
         salario2 = 3000;
