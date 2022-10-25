@@ -1,42 +1,46 @@
 <html>
     <script>
         // Janeiro
-        salario1 = 3000
-        aluguel1 = 1000
-        contaDeAgua1 = 200
-        contaDeLuz1 = 100
-        internet1 = 100
-        transporte1 = 300
-        lazer1 = 300
-        alimentacao1 = 500
-        saldoJaneiro = salario1 - aluguel1 - contaDeAgua1 - contaDeLuz1 - internet1 - transporte1 - lazer1 - alimentacao1
-        console.log('Janeiro')
-        console.log(saldoJaneiro)
+        salario1 = 3000;
+        aluguel1 = 1000;
+        contaDeAgua1 = 200;
+        contaDeLuz1 = 100;
+        internet1 = 100;
+        transporte1 = 300;
+        lazer1 = 300;
+        alimentacao1 = 500;
+        saldoJaneiro = salario1 - aluguel1 - contaDeAgua1 - contaDeLuz1 - internet1 - transporte1 - lazer1 - alimentacao1;
+        console.log('Janeiro');
+        console.log(saldoJaneiro);
         // Avaliar se tem juros ou rendimento
         if (saldoJaneiro < 0) {
-            console.log("Juros")
+            console.log("Juros");
+            juros1 = saldoJaneiro * 0.01;
         } else {
-            console.log("Rendimento")
+            console.log("Rendimento");
+            rendimento1 = saldoJaneiro * 0.005;
         }
         // Fevereiro
-        salario2 = 3000
-        aluguel2 = 1200
-        contaDeAgua2 = 250
-        contaDeLuz2 = 100
-        internet2 = 100
-        transporte2 = 500
-        lazer2 = 0
-        alimentacao2 = 1000
-        saldoFevereiro = salario2 - aluguel2 - contaDeAgua2 - contaDeLuz2 - internet2 - transporte2 - lazer2 - alimentacao2
-        console.log('Fevereiro')
-        console.log(saldoFevereiro)
+        salario2 = 3000;
+        aluguel2 = 1200;
+        contaDeAgua2 = 250;
+        contaDeLuz2 = 100;
+        internet2 = 100;
+        transporte2 = 500;
+        lazer2 = 0;
+        alimentacao2 = 1000;
+        saldoFevereiro = salario2 - aluguel2 - contaDeAgua2 - contaDeLuz2 - internet2 - transporte2 - lazer2 - alimentacao2;
+        console.log('Fevereiro');
+        console.log(saldoFevereiro);
         if (saldoFevereiro < 0) {
-            console.log("Juros")
+            console.log("Juros");
+            juros2 = saldoFevereiro * 0.01;
         } else {
-            console.log("Rendimento")
+            console.log("Rendimento");
+            rendimento2 = saldoFevereiro * 0.005;
         }
-        acumuladoAno = saldoJaneiro + saldoFevereiro
-        console.log('Saldo do Ano')
-        console.log(acumuladoAno)
+        acumuladoAno = saldoJaneiro + saldoFevereiro;
+        console.log('Saldo do Ano');
+        console.log(acumuladoAno);
     </script>
 </html>
