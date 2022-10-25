@@ -1,35 +1,33 @@
 <html>
     <script>
-        function arredondar(valor) {
-           valor = Math.round(valor*100)/100
-           return valor
-        }
+        function arredondar (valor) {
+			return Math.round(valor*100)/100
+		}
 
-        function calcularJuros(valor) {
-            juros = arredondar(valor * 0.1);
-            console.log("Juros: " + juros)
-            return juros
-        }
+		function calcularJuros (valor) {
+			juros = arredondar(valor * 0.1)
+			return juros
+		}
+		
+		function calcularRendimentos (valor) {
+			rendimentos = arredondar(valor * 0.005)
+			console.log(rendimentos)
+			return rendimentos
+		}
 
-        function calcularRendimento(valor) {
-            rendimento = arredondar(valor * 0.005);
-            console.log("Rendimentos: " + rendimento)
-            return rendimento
-        }
-
-        function calcularSaldo (mes, saldoInicial, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
-            console.log(mes);
-            saldo = saldoInicial + salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;     
-            console.log("Saldo do mes de " + mes + ": " + arredondar(saldo))   
-            estaNegativo = saldo < 0;
-            if (estaNegativo) {
-                juros = calcularJuros(saldo);
-                saldo = arredondar(saldo + juros);
-            } else {
-                rendimento = calcularRendimento(saldo);
-                saldo = arredondar(saldo + rendimento);
-            } return saldo;
-        }
+		function calcularSaldo (mes, saldoInicial, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
+			console.log(mes)
+			saldo = saldoInicial + salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao
+			estaNegativo = saldo < 0
+			if (estaNegativo) {
+				juros = calcularJuros(saldo)
+				saldo = arredondar(saldo + juros)
+			} else {
+				rendimentos = calcularRendimentos(saldo)
+				saldo = arredondar(saldo + rendimentos)
+			}
+			return saldo
+		}
 
 
 
