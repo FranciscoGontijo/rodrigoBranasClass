@@ -15,9 +15,17 @@
 			return rendimentos
 		}
 
-		function calcularSaldo (mes, saldoInicial, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao, condominio, farmacia) {
+        function somarLancamentos(arr) {
+            let valor = 0;
+            for (var i = 0; i < arr.length; i++) {
+                valor += arr[i];
+            } return valor
+        }
+
+
+		function calcularSaldo (mes, saldoInicial, lancamentos) {
 			console.log(mes)
-			saldo = saldoInicial + salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao - condominio - farmacia
+			saldo = somarLancamentos(lancamentos)
 			estaNegativo = saldo < 0
 			if (estaNegativo) {
 				juros = calcularJuros(saldo)
@@ -33,17 +41,17 @@
 
         lancamentosJaneiro = [3000, -1000, -200, -100, -100, -300, -300, -500, -300, -100]
 
-		saldo1 = calcularSaldo("janeiro", saldoInicial, salario1, aluguel1, contaDeAgua1, contaDeLuz1, internet1, transporte1, lazer1, alimentacao1, condominio1, farmacia1)
+		saldo1 = calcularSaldo("janeiro", saldoInicial, lancamentosJaneiro)
 		console.log(saldo1)
 
         lancamentosFevereiro = [3000, -1200, -250, -100, -500, 0, -1000, -400, 0]
 
-		saldo2 = calcularSaldo("feveiro", saldo1, salario2, aluguel2, contaDeAgua2, contaDeLuz2, internet2, transporte2, lazer2, alimentacao2, condominio2, farmacia2)
+		saldo2 = calcularSaldo("feveiro", saldo1, lancamentosFevereiro)
 		console.log(saldo2)
 
         lancamentosMarco = [4000, -1200, -200, -100, -200, -500, -800, -1000, -400, 0]
 
-		saldo3 = calcularSaldo("marco", saldo2, salario3, aluguel3, contaDeAgua3, contaDeLuz3, internet3, transporte3, lazer3, alimentacao3, condominio3, farmacia3)
+		saldo3 = calcularSaldo("marco", saldo2, lancamentosMarco)
 		console.log(saldo3)
 		acumuladoAno = saldo3
 		console.log("ano")
