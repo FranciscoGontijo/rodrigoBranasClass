@@ -10,16 +10,19 @@
             return rendimento
         }
 
-        function calcularProfit (saldo, mes) {
+        function calcularSaldo (mes, salario, aluguel, contaDeAgua, contaDeLuz, internet, transporte, lazer, alimentacao) {
+            saldo = salario - aluguel - contaDeAgua - contaDeLuz - internet - transporte - lazer - alimentacao;
+            console.log(mes);
+            console.log(saldo);
             estaNegativo = saldo < 0;
             if (estaNegativo) {
                 console.log("juros de " + mes);
-                juros = saldo * 0.1;
+                juros = calcularJuros(saldo);
                 console.log(juros);
                 saldo = saldo + juros;
             } else {
                 console.log("rendimentos de " + mes);
-                rendimentos = saldo * 0.005;
+                rendimentos = calcularRendimento(saldo);
                 console.log(rendimentos);
                 saldo = saldo + rendimentos;
             } return saldo;
