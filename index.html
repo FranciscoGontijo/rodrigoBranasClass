@@ -40,23 +40,27 @@
         transporte1 = 300;
         lazer1 = 300;
         alimentacao1 = 500;
-        saldoJaneiro = salario1 - aluguel1 - contaDeAgua1 - contaDeLuz1 - internet1 - transporte1 - lazer1 - alimentacao1;
-        console.log('Janeiro');
-        console.log(saldoJaneiro);
-        // Avaliar se tem juros ou rendimento
-        estaNegativo1 = saldoJaneiro < 0
-		if (estaNegativo1) {
-			console.log("juros de janeiro")
-			juros1 = saldoJaneiro * 0.1
-			console.log(juros1)
-			saldoJaneiro = saldoJaneiro + juros1
-		} else {
-			console.log("rendimentos de janeiro")
-			rendimentos1 = saldoJaneiro * 0.005
-			console.log(rendimentos1)
-			saldoJaneiro = saldoJaneiro + rendimentos1
-		}
-		console.log(saldoJaneiro)
+        // saldoJaneiro = salario1 - aluguel1 - contaDeAgua1 - contaDeLuz1 - internet1 - transporte1 - lazer1 - alimentacao1;
+        // console.log('Janeiro');
+        // console.log(saldoJaneiro);
+        // // Avaliar se tem juros ou rendimento
+        // estaNegativo1 = saldoJaneiro < 0
+		// if (estaNegativo1) {
+		// 	console.log("juros de janeiro")
+		// 	juros1 = saldoJaneiro * 0.1
+		// 	console.log(juros1)
+		// 	saldoJaneiro = saldoJaneiro + juros1
+		// } else {
+		// 	console.log("rendimentos de janeiro")
+		// 	rendimentos1 = saldoJaneiro * 0.005
+		// 	console.log(rendimentos1)
+		// 	saldoJaneiro = saldoJaneiro + rendimentos1
+		// }
+		// console.log(saldoJaneiro)
+
+        saldoJaneiro = calcularSaldo ('Janeiro', 3000, 1000, 200, 100, 100, 300, 300, 500)
+        console.log(saldoJaneiro)
+
         // Fevereiro
         salario2 = 3000;
         aluguel2 = 1200;
