@@ -16,10 +16,15 @@
         if (saldoJaneiro < 0) {
             console.log("Juros");
             juros1 = saldoJaneiro * 0.01;
+            console.log(juros1);
+            saldoJaneiro += juros1;
         } else {
             console.log("Rendimento");
             rendimento1 = saldoJaneiro * 0.005;
+            console.log(rendimento1);
+            saldoJaneiro += rendimento1;
         }
+        console.log(saldoJaneiro);
         // Fevereiro
         salario2 = 3000;
         aluguel2 = 1200;
@@ -35,10 +40,15 @@
         if (saldoFevereiro < 0) {
             console.log("Juros");
             juros2 = saldoFevereiro * 0.01;
+            console.log(juros2);
+            saldoFevereiro += juros2;
         } else {
             console.log("Rendimento");
             rendimento2 = saldoFevereiro * 0.005;
+            console.log(rendimento2);
+            saldoFevereiro += juros2;
         }
+        console.log(saldoFevereiro);
         acumuladoAno = saldoJaneiro + saldoFevereiro;
         console.log('Saldo do Ano');
         console.log(acumuladoAno);
