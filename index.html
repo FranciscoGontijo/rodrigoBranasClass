@@ -1,5 +1,23 @@
 <html>
     <script>
+        function calcularJuros (saldo, mes) {
+            estaNegativo = saldo < 0;
+            if (estaNegativo) {
+                console.log("juros de " + mes);
+                juros = saldo * 0.1;
+                console.log(juros);
+                saldo = saldo + juros;
+            } else {
+                console.log("rendimentos de " + mes);
+                rendimentos = saldo * 0.005;
+                console.log(rendimentos);
+                saldo = saldo + rendimentos;
+            } return saldo;
+        }
+
+
+
+
         // Janeiro
         salario1 = 3000;
         aluguel1 = 1000;
@@ -79,7 +97,7 @@
 		}
 		console.log(saldoMarco)
 
-        acumuladoAno = saldoJaneiro + saldoFevereiro;
+        acumuladoAno = saldoJaneiro + saldoFevereiro + saldoMarco;
         console.log('Saldo do Ano');
         console.log(acumuladoAno);
     </script>
