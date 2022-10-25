@@ -12,6 +12,12 @@
         saldoJaneiro = salario1 - aluguel1 - contaDeAgua1 - contaDeLuz1 - internet1 - transporte1 - lazer1 - alimentacao1
         console.log('Janeiro')
         console.log(saldoJaneiro)
+        // Avaliar se tem juros ou rendimento
+        if (saldoJaneiro < 0) {
+            console.log("Juros")
+        } else {
+            console.log("Rendimento")
+        }
         // Fevereiro
         salario2 = 3000
         aluguel2 = 1200
