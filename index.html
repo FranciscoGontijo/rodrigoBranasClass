@@ -1,13 +1,18 @@
 <html>
     <script>
+        function arredondar(valor) {
+           valor = Math.round(valor*100)/100
+           return valor
+        }
+
         function calcularJuros(valor) {
-            juros = valor * 0.1;
+            juros = arredondar(valor * 0.1);
             console.log("Juros: " + juros)
             return juros
         }
 
         function calcularRendimento(valor) {
-            rendimento = valor * 0.005;
+            rendimento = arredondar(valor * 0.005);
             console.log("Rendimentos: " + rendimento)
             return rendimento
         }
