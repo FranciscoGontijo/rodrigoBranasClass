@@ -30,6 +30,11 @@
         saldoFevereiro = salario2 - aluguel2 - contaDeAgua2 - contaDeLuz2 - internet2 - transporte2 - lazer2 - alimentacao2
         console.log('Fevereiro')
         console.log(saldoFevereiro)
+        if (saldoFevereiro < 0) {
+            console.log("Juros")
+        } else {
+            console.log("Rendimento")
+        }
         acumuladoAno = saldoJaneiro + saldoFevereiro
         console.log('Saldo do Ano')
         console.log(acumuladoAno)
