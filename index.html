@@ -62,23 +62,22 @@
         transporte3= 300;
         lazer3= 300;
         alimentacao3= 500;
-        saldoJaneiro = salario3- aluguel3- contaDeAgua3- contaDeLuz3- internet3- transporte3- lazer3- alimentacao3;
-        console.log('Janeiro');
-        console.log(saldoJaneiro);
-        // Avaliar se tem juros ou rendimento
-        estaNegativo1 = saldoJaneiro < 0
+        saldoMarco = salario3- aluguel3- contaDeAgua3- contaDeLuz3- internet3- transporte3- lazer3- alimentacao3;
+        console.log('Marco');
+        console.log(saldoMarco);
+        estaNegativo1 = saldoMarco < 0
 		if (estaNegativo1) {
-			console.log("juros de janeiro")
-			juros1 = saldoJaneiro * 0.1
+			console.log("juros de Marco")
+			juros1 = saldoMarco * 0.1
 			console.log(juros1)
-			saldoJaneiro = saldoJaneiro + juros1
+			saldoMarco = saldoMarco + juros1
 		} else {
-			console.log("rendimentos de janeiro")
-			rendimentos1 = saldoJaneiro * 0.005
+			console.log("rendimentos de Marco")
+			rendimentos1 = saldoMarco * 0.005
 			console.log(rendimentos1)
-			saldoJaneiro = saldoJaneiro + rendimentos1
+			saldoMarco = saldoMarco + rendimentos1
 		}
-		console.log(saldoJaneiro)
+		console.log(saldoMarco)
 
         acumuladoAno = saldoJaneiro + saldoFevereiro;
         console.log('Saldo do Ano');
