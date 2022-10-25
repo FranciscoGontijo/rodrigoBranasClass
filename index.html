@@ -15,32 +15,27 @@
 			return rendimentos
 		}
 
-        function somarLancamentos(arr) {
-            let valor = 0;
-            for (var i = 0; i < arr.length; i++) {
-                if (arr[i].tipo === 'receita') {
-                    valor += arr[i].valor;
-                } 
-                if (arr[i].tipo === 'despesa') {
-                    valor -= arr[i].valor;
-                }
-            } return valor
-        }
-
-
-		function calcularSaldo (mes, saldoInicial, lancamentos) {
-			console.log(mes);
-			saldo = somarLancamentos(lancamentos) + saldoInicial;
-			estaNegativo = saldo < 0;
+        function calcularSaldo (mes, saldoInicial, lancamentos) {
+			console.log(mes)
+			saldo = saldoInicial
+			for (lancamento of lancamentos) {
+				if (lancamento.tipo === "receita") {
+					saldo += lancamento.valor
+				}
+				if (lancamento.tipo === "despesa") {
+					saldo -= lancamento.valor
+				}
+			}
+			estaNegativo = saldo < 0
 			if (estaNegativo) {
-				juros = calcularJuros(saldo);
-				saldo = arredondar(saldo + juros);
+				juros = calcularJuros(saldo)
+				saldo = arredondar(saldo + juros)
 			} else {
-				rendimentos = calcularRendimentos(saldo);
-				saldo = arredondar(saldo + rendimentos);
+				rendimentos = calcularRendimentos(saldo)
+				saldo = arredondar(saldo + rendimentos)
 			}
 			return saldo
-		}
+        }
 
         saldoInicial = 0;
 
