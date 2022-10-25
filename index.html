@@ -1,6 +1,16 @@
 <html>
     <script>
-        function calcularJuros (saldo, mes) {
+        function calcularJuros(valor) {
+            juros = valor * 0.1;
+            return juros
+        }
+
+        function calcularRendimento(valor) {
+            rendimento = valor * 0.005;
+            return rendimento
+        }
+
+        function calcularProfit (saldo, mes) {
             estaNegativo = saldo < 0;
             if (estaNegativo) {
                 console.log("juros de " + mes);
