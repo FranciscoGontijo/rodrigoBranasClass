@@ -3,7 +3,13 @@
         class Lancamento {
             constructor (categoria, tipo, valor) {
             if (tipo !== 'receita' && tipo !== 'despesa') {
-                throw new Error('Lancamento Invalido: Tipo deve ser receita ou despesa')
+                throw new Error('Lancamento Invalido: Tipo deve ser receita ou despesa');
+            }
+            if (valor <= 0) {
+                throw new Error('Lancamento Invalido: Valor deve  ser maior que zero');
+            }
+            if (categoria === '') {
+                throw new Error('Lancamento Invalido: a Categoria e obrigatoria');
             }
               this.categoria = categoria;
               this.tipo = tipo;
