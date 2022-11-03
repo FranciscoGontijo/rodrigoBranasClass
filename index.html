@@ -1,11 +1,19 @@
 <html>
     <script>
         class Lancamento {
-
+            constructor (categoria, tipo, valor) {
+            if ()
+              this.categoria = categoria;
+              this.tipo = tipo;
+              this.valor = valor;
+            }
         }
 
-        novoLancamento = new Lancamento();
-        
+        novoLancamento1 = new Lancamento('Salario' , 'receita', 3000);
+        novoLancamento2 = new Lancamento('Aluguel' , 'receita', 3000);
+        console.log(novoLancamento1);
+        console.log(novoLancamento2);
+
 
         function arredondar (valor) {
 			return Math.round(valor*100)/100
