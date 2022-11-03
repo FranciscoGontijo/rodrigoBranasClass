@@ -2,7 +2,9 @@
     <script>
         class Lancamento {
             constructor (categoria, tipo, valor) {
-            if ()
+            if (tipo !== 'receita' && tipo !== 'despesa') {
+                throw new Error('Lancamento Invalido: Tipo deve ser receita ou despesa')
+            }
               this.categoria = categoria;
               this.tipo = tipo;
               this.valor = valor;
