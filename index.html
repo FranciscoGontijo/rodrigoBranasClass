@@ -9,19 +9,13 @@
                 throw new Error('Lancamento Invalido: Valor deve  ser maior que zero');
             }
             if (categoria === '') {
-                throw new Error('Lancamento Invalido: a Categoria e obrigatoria');
+                throw new Error('Lancamento Invalido: A Categoria e obrigatoria');
             }
               this.categoria = categoria;
               this.tipo = tipo;
               this.valor = valor;
             }
         }
-
-        novoLancamento1 = new Lancamento('Salario' , 'receita', 3000);
-        novoLancamento2 = new Lancamento('Aluguel' , 'receita', 3000);
-        console.log(novoLancamento1);
-        console.log(novoLancamento2);
-
 
         function arredondar (valor) {
 			return Math.round(valor*100)/100
@@ -63,48 +57,45 @@
         saldoInicial = 0;
 
         lancamentosJaneiro = [
-            {categoria: 'Salario',tipo: 'receita',valor: 3000},
-            {categoria: 'Aluguel',tipo: 'despesa',valor: 1000},
-            {categoria: 'Conta de Luz',tipo: 'despesa',valor: 200},
-            {categoria: 'Conta de Agua',tipo: 'despesa',valor: 100},
-            {categoria: 'Internet',tipo: 'despesa',valor: 100},
-            {categoria: 'Transporte',tipo: 'despesa',valor: 300},
-            {categoria: 'Lazer',tipo: 'despesa',valor: 300},
-            {categoria: 'Alimentacao',tipo: 'despesa',valor: 500},
-            {categoria: 'Condominio',tipo: 'despesa',valor: 300},
-            {categoria: 'Farmacia',tipo: 'despesa',valor: 100},
+            new Lancamento('Salario', 'receita', 3000),
+            new Lancamento('Aluguel', 'despesa', 1000),
+            new Lancamento('Conta de Luz', 'despesa', 200),
+            new Lancamento('Conta de Agua', 'despesa', 100),
+            new Lancamento('Internet', 'despesa', 100),
+            new Lancamento('Transporte', 'despesa', 300),
+            new Lancamento('Lazer', 'despesa', 300),
+            new Lancamento('Alimentacao', 'despesa', 500),
+            new Lancamento('Condominio', 'despesa', 300),
+            new Lancamento('Farmacia', 'despesa', 100),
         ]
 
 		saldo1 = calcularSaldo("janeiro", saldoInicial, lancamentosJaneiro);
 		console.log(saldo1);
 
         lancamentosFevereiro = [
-            {categoria: 'Salario',tipo: 'receita',valor: 3000},
-            {categoria: 'Aluguel',tipo: 'despesa',valor: 1200},
-            {categoria: 'Conta de Luz',tipo: 'despesa',valor: 250},
-            {categoria: 'Conta de Agua',tipo: 'despesa',valor: 100},
-            {categoria: 'Internet',tipo: 'despesa',valor: 100},
-            {categoria: 'Transporte',tipo: 'despesa',valor: 500},
-            {categoria: 'Lazer',tipo: 'despesa',valor: 0},
-            {categoria: 'Alimentacao',tipo: 'despesa',valor: 1000},
-            {categoria: 'Condominio',tipo: 'despesa',valor: 400},
-            {categoria: 'Farmacia',tipo: 'despesa',valor: 0},
+            new Lancamento('Salario', 'receita', 3000),
+            new Lancamento('Aluguel', 'despesa', 1200),
+            new Lancamento('Conta de Luz', 'despesa', 250),
+            new Lancamento('Conta de Agua', 'despesa', 100),
+            new Lancamento('Internet', 'despesa', 100),
+            new Lancamento('Transporte', 'despesa', 500),
+            new Lancamento('Alimentacao', 'despesa', 1000),
+            new Lancamento('Condominio', 'despesa', 400)
         ]
 
 		saldo2 = calcularSaldo("feveiro", saldo1, lancamentosFevereiro);
 		console.log(saldo2);
 
         lancamentosMarco = [
-            {categoria: 'Salario',tipo: 'receita',valor: 4000},
-            {categoria: 'Aluguel',tipo: 'despesa',valor: 1200},
-            {categoria: 'Conta de Luz',tipo: 'despesa',valor: 200},
-            {categoria: 'Conta de Agua',tipo: 'despesa',valor: 100},
-            {categoria: 'Internet',tipo: 'despesa',valor: 200},
-            {categoria: 'Transporte',tipo: 'despesa',valor: 500},
-            {categoria: 'Lazer',tipo: 'despesa',valor: 800},
-            {categoria: 'Alimentacao',tipo: 'despesa',valor: 1000},
-            {categoria: 'Condominio',tipo: 'despesa',valor: 400},
-            {categoria: 'Farmacia',tipo: 'despesa',valor: 0},
+            new Lancamento('Salario', 'receita', 4000),
+            new Lancamento('Aluguel', 'despesa', 1200),
+            new Lancamento('Conta de Luz', 'despesa', 200),
+            new Lancamento('Conta de Agua', 'despesa', 100),
+            new Lancamento('Internet', 'despesa', 200),
+            new Lancamento('Transporte', 'despesa', 500),
+            new Lancamento('Lazer', 'despesa', 800),
+            new Lancamento('Alimentacao', 'despesa', 1000),
+            new Lancamento('Condominio', 'despesa', 400)
         ];
 
 		saldo3 = calcularSaldo("marco", saldo2, lancamentosMarco);
