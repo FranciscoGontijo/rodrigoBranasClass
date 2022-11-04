@@ -34,7 +34,7 @@
 
         function calcularSaldo (mes, saldoInicial, lancamentos) {
 			console.log(mes);
-            totalizadorDoMes = {saldo: 0, juros: 0, rendimentos: 0, receitas: 0, despesas: 0}
+            totalizadorDoMes = {saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0}
 			totalizadorDoMes.saldo = saldoInicial
 			for (lancamento of lancamentos) {
 				if (lancamento.tipo === "receita") {
@@ -46,13 +46,19 @@
                     totalizadorDoMes.despesas -= lancamento.valor;
 				}
 			}
+            for (lancamento of lancamentos) {
+                if (lancamento.tipo === "despesa") {
+                    console.log(lancamento.valor / totalizadorDoMes.despesas);
+                }
+            }
+            console.log(totalizadorDoMes.despesas);
 			estaNegativo = totalizadorDoMes.saldo < 0
 			if (estaNegativo) {
-				totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo)
-				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + juros)
+				totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo);
+				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + totalizadorDoMes.juros);
 			} else {
-				rendimentos = calcularRendimentos(totalizadorDoMes.saldo)
-				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + rendimentos)
+				totalizadorDoMes.rendimentos = calcularRendimentos(totalizadorDoMes.saldo);
+				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + totalizadorDoMes.rendimentos);
 			}
 			return totalizadorDoMes
         }
