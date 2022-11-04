@@ -68,12 +68,6 @@
 			}
 		}
 
-		const janeiro = new Mes('janeiro', 0);
-		janeiro.adicionarLancamento(new Lancamento("salario", 'receita', 3000));
-		janeiro.adicionarLancamento(new Lancamento("aluguel", 'despesa', 1000));
-		janeiro.calcularSaldo();
-		console.log(janeiro);
-
 		function arredondar (valor) {
 			return Math.round(valor*100)/100;
 		}
@@ -125,52 +119,53 @@
 			return totalizadorDoMes;
 		} */
 		const saldoInicial = 0;
-		const lancamentosJaneiro = [
-			new Lancamento("Salário", "receita", 3000),
-			new Lancamento("Aluguel", "despesa", 1000),
-			new Lancamento("Conta de Luz", "despesa", 200),
-			new Lancamento("Conta de Água", "despesa", 100),
-			new Lancamento("Internet", "despesa", 100),
-			new Lancamento("Transporte", "despesa", 300),
-			new Lancamento("Lazer", "despesa", 300),
-			new Lancamento("Alimentação", "despesa", 500),
-			new Lancamento("Condomínio", "despesa", 300),
-			new Lancamento("Farmácia", "despesa", 100)
-		]
+		const janeiro = new Mes('janeiro', 0);
+
+		janeiro.adicionarLancamento(new Lancamento("Salário", "receita", 3000));
+		janeiro.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1000));
+		janeiro.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 200));
+		janeiro.adicionarLancamento(new Lancamento("Conta de Água", "despesa", 100));
+		janeiro.adicionarLancamento(new Lancamento("Internet", "despesa", 100));
+		janeiro.adicionarLancamento(new Lancamento("Transporte", "despesa", 300));
+		janeiro.adicionarLancamento(new Lancamento("Lazer", "despesa", 300));
+		janeiro.adicionarLancamento(new Lancamento("Alimentação", "despesa", 500));
+		janeiro.adicionarLancamento(new Lancamento("Condomínio", "despesa", 300));
+		janeiro.adicionarLancamento(new Lancamento("Farmácia", "despesa", 100));
+			
 		const totalizadorDoMes1 = calcularSaldo("janeiro", saldoInicial, lancamentosJaneiro);
-		console.log(totalizadorDoMes1);
-		const lancamentosFevereiro = [
-			new Lancamento("Salário", "receita", 3000),
-			new Lancamento("Aluguel", "despesa", 1200),
-			new Lancamento("Conta de Luz", "despesa", 250),
-			new Lancamento("Conta de Água", "despesa", 100),
-			new Lancamento("Internet", "despesa", 100),
-			new Lancamento("Transporte", "despesa", 500),
-			new Lancamento("Alimentação", "despesa", 1000),
-			new Lancamento("Condomínio", "despesa", 400)
-		]
-		const totalizadorDoMes2 = calcularSaldo("fevereiro", totalizadorDoMes1.saldo, lancamentosFevereiro);
-		console.log(totalizadorDoMes2);
-		const lancamentosMarco = [
-			new Lancamento("Salário", "receita", 4000), 
-			new Lancamento("Aluguel", "despesa", 1200), 
-			new Lancamento("Conta de Luz", "despesa", 200), 
-			new Lancamento("Conta de Água", "despesa", 100), 
-			new Lancamento("Internet", "despesa", 200), 
-			new Lancamento("Transporte", "despesa", 500), 
-			new Lancamento("Lazer", "despesa", 800), 
-			new Lancamento("Alimentação", "despesa", 1000), 
-			new Lancamento("Condomínio", "despesa", 400)
-		]
-		const totalizadorDoMes3 = calcularSaldo("marco", totalizadorDoMes2.saldo, lancamentosMarco);
-		console.log(totalizadorDoMes3);
-		const acumuladoAno = totalizadorDoMes3.saldo;
-		console.log("ano");
-		console.log(acumuladoAno);
+		// console.log(totalizadorDoMes1);
+		// const lancamentosFevereiro = [
+		// 	new Lancamento("Salário", "receita", 3000),
+		// 	new Lancamento("Aluguel", "despesa", 1200),
+		// 	new Lancamento("Conta de Luz", "despesa", 250),
+		// 	new Lancamento("Conta de Água", "despesa", 100),
+		// 	new Lancamento("Internet", "despesa", 100),
+		// 	new Lancamento("Transporte", "despesa", 500),
+		// 	new Lancamento("Alimentação", "despesa", 1000),
+		// 	new Lancamento("Condomínio", "despesa", 400)
+		// ]
+		// const totalizadorDoMes2 = calcularSaldo("fevereiro", totalizadorDoMes1.saldo, lancamentosFevereiro);
+		// console.log(totalizadorDoMes2);
+		// const lancamentosMarco = [
+		// 	new Lancamento("Salário", "receita", 4000), 
+		// 	new Lancamento("Aluguel", "despesa", 1200), 
+		// 	new Lancamento("Conta de Luz", "despesa", 200), 
+		// 	new Lancamento("Conta de Água", "despesa", 100), 
+		// 	new Lancamento("Internet", "despesa", 200), 
+		// 	new Lancamento("Transporte", "despesa", 500), 
+		// 	new Lancamento("Lazer", "despesa", 800), 
+		// 	new Lancamento("Alimentação", "despesa", 1000), 
+		// 	new Lancamento("Condomínio", "despesa", 400)
+		// ]
+		// const totalizadorDoMes3 = calcularSaldo("marco", totalizadorDoMes2.saldo, lancamentosMarco);
+		// console.log(totalizadorDoMes3);
+		// const acumuladoAno = totalizadorDoMes3.saldo;
+		// console.log("ano");
+		// console.log(acumuladoAno);
 
 		//tests 
-		console.log(totalizadorDoMes1.saldo === 100.5);
-		console.log(totalizadorDoMes2.saldo === -494.45);
-		console.log(totalizadorDoMes3.saldo === -983.89);
+		// console.log(totalizadorDoMes1.saldo === 100.5);
+		// console.log(totalizadorDoMes2.saldo === -494.45);
+		// console.log(totalizadorDoMes3.saldo === -983.89);
 	</script>
 </html>
