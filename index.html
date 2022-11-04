@@ -28,7 +28,6 @@
 		
 		function calcularRendimentos (valor) {
 			rendimentos = arredondar(valor * 0.005)
-			console.log(rendimentos)
 			return rendimentos
 		}
 
@@ -48,7 +47,8 @@
 			}
             for (lancamento of lancamentos) {
                 if (lancamento.tipo === "despesa") {
-                    console.log(lancamento.valor / totalizadorDoMes.despesas);
+                    percentual = arredondar((lancamento.valor / Math.abs(totalizadorDoMes.despesas)) * 100);
+                    console.log(`${lancamento.categoria}: ${percentual}%`);
                 }
             }
             console.log(totalizadorDoMes.despesas);
