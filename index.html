@@ -14,6 +14,17 @@
 			adicionarLancamento (lancamento) {
 				this.lancamentos.push(lancamento);
 			}
+
+			calcularSaldo () {
+				for (const lancamento of this.lancamentos) {
+					if (lancamento.tipo === "receita") {
+						this.totalizadorDoMes.saldo += lancamento.valor;
+					}
+					if (lancamento.tipo === "despesa") {
+						this.totalizadorDoMes.saldo -= lancamento.valor;
+					}
+				}
+			}
 		}
 
 		class Lancamento {
@@ -36,6 +47,8 @@
 
 		const janeiro = new Mes('janeiro', 0);
 		janeiro.adicionarLancamento(new Lancamento("salario", 'receita', 3000));
+		janeiro.adicionarLancamento(new Lancamento("aluguel", 'despesa', 1000));
+		janeiro.calcularSaldo();
 		console.log(janeiro);
 
 		function arredondar (valor) {
