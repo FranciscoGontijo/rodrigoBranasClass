@@ -38,19 +38,19 @@
 			totalizadorDoMes.saldo = saldoInicial
 			for (lancamento of lancamentos) {
 				if (lancamento.tipo === "receita") {
-					totalizadorDoMes.saldo += lancamento.valor
+					totalizadorDoMes.saldo += lancamento.valor;
 				}
 				if (lancamento.tipo === "despesa") {
 					totalizadorDoMes.saldo -= lancamento.valor
 				}
 			}
-			estaNegativo = totalizador.saldo < 0
+			estaNegativo = totalizadorDoMes.saldo < 0
 			if (estaNegativo) {
-				juros = calcularJuros(totalizador.saldo)
-				totalizador.saldo = arredondar(totalizador.saldo + juros)
+				totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo)
+				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + juros)
 			} else {
-				rendimentos = calcularRendimentos(totalizador.saldo)
-				totalizador.saldo = arredondar(totalizador.saldo + rendimentos)
+				rendimentos = calcularRendimentos(totalizadorDoMes.saldo)
+				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + rendimentos)
 			}
 			return totalizadorDoMes
         }
@@ -70,8 +70,8 @@
             new Lancamento('Farmacia', 'despesa', 100),
         ]
 
-		saldo1 = calcularSaldo("janeiro", saldoInicial, lancamentosJaneiro);
-		console.log(saldo1);
+		totalizadorDoMes1 = calcularSaldo("janeiro", saldoInicial, lancamentosJaneiro);
+		console.log(totalizadorDoMes1);
 
         lancamentosFevereiro = [
             new Lancamento('Salario', 'receita', 3000),
@@ -84,8 +84,8 @@
             new Lancamento('Condominio', 'despesa', 400)
         ]
 
-		saldo2 = calcularSaldo("feveiro", saldo1, lancamentosFevereiro);
-		console.log(saldo2);
+		totalizadorDoMes2 = calcularSaldo("feveiro", totalizadorDoMes1.saldo, lancamentosFevereiro);
+		console.log(totalizadorDoMes2);
 
         lancamentosMarco = [
             new Lancamento('Salario', 'receita', 4000),
@@ -99,9 +99,9 @@
             new Lancamento('Condominio', 'despesa', 400)
         ];
 
-		saldo3 = calcularSaldo("marco", saldo2, lancamentosMarco);
-		console.log(saldo3);
-		acumuladoAno = saldo3;
+		totalizadorDoMes3 = calcularSaldo("marco", totalizadorDoMes2.saldo, lancamentosMarco);
+		console.log(totalizadorDoMes3);
+		acumuladoAno = totalizadorDoMes3.saldo;
 		console.log("ano");
 		console.log(acumuladoAno);
     </script>
