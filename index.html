@@ -30,6 +30,16 @@
 			rendimentos = arredondar(valor * 0.005)
 			return rendimentos
 		}
+        function distribuirDespesas (lancamentos, total) {
+            distribuicaoDeDespesas = [];
+            for (lancamento of lancamentos) {
+                    if (lancamento.tipo === "despesa") {
+                        percentual = arredondar((lancamento.valor / Math.abs(total)) * 100);
+                        distribuicaoDeDespesas.push({categoria: lancamento.categoria, percentual});
+                        console.log(`${lancamento.categoria}: ${percentual}%`);
+                    }
+                } return distribuicaoDeDespesas;
+        }
 
         function calcularSaldo (mes, saldoInicial, lancamentos) {
 			console.log(mes);
@@ -45,13 +55,7 @@
                     totalizadorDoMes.despesas -= lancamento.valor;
 				}
 			}
-            for (lancamento of lancamentos) {
-                if (lancamento.tipo === "despesa") {
-                    percentual = arredondar((lancamento.valor / Math.abs(totalizadorDoMes.despesas)) * 100);
-                    totalizadorDoMes.distribuicaoDeDespesas.push({categoria: lancamento.categoria, percentual});
-                    console.log(`${lancamento.categoria}: ${percentual}%`);
-                }
-            }
+            totalizadorDoMes.distribuicaoDeDespesas = distribuirDespesas(lancamentos, totalizadorDoMes.despesas);
 			estaNegativo = totalizadorDoMes.saldo < 0
 			if (estaNegativo) {
 				totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo);
