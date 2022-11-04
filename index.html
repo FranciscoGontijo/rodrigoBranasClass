@@ -43,6 +43,30 @@
 				this.tipo = tipo;
 				this.valor = valor;
 			}
+
+			calcularSaldo (mes, saldoInicial, lancamentos) {
+				const totalizadorDoMes = { saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [] }
+				totalizadorDoMes.saldo = saldoInicial;
+				for (const lancamento of lancamentos) {
+					if (lancamento.tipo === "receita") {
+						totalizadorDoMes.saldo += lancamento.valor;
+						totalizadorDoMes.receitas += lancamento.valor;
+					}
+					if (lancamento.tipo === "despesa") {
+						totalizadorDoMes.saldo -= lancamento.valor;
+						totalizadorDoMes.despesas += lancamento.valor;
+					}
+				}
+				totalizadorDoMes.distribuicaoDeDespesas = distribuirDespesas(lancamentos, totalizadorDoMes.despesas);
+				const estaNegativo = totalizadorDoMes.saldo < 0;
+				if (estaNegativo) {
+					totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo);
+					totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + totalizadorDoMes.juros);
+				} else {
+					totalizadorDoMes.rendimentos = calcularRendimentos(totalizadorDoMes.saldo);
+					totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + totalizadorDoMes.rendimentos);
+				} return totalizadorDoMes;
+			}
 		}
 
 		const janeiro = new Mes('janeiro', 0);
@@ -76,7 +100,7 @@
 			return distribuicaoDeDespesas
 		}
 
-		function calcularSaldo (mes, saldoInicial, lancamentos) {
+		/* function calcularSaldo (mes, saldoInicial, lancamentos) {
 			console.log(mes);
 			const totalizadorDoMes = { saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [] }
 			totalizadorDoMes.saldo = saldoInicial;
@@ -100,7 +124,7 @@
 				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + totalizadorDoMes.rendimentos);
 			}
 			return totalizadorDoMes;
-		}
+		} */
 		const saldoInicial = 0;
 		const lancamentosJaneiro = [
 			new Lancamento("Salário", "receita", 3000),
@@ -144,5 +168,10 @@
 		const acumuladoAno = totalizadorDoMes3.saldo;
 		console.log("ano");
 		console.log(acumuladoAno);
+
+		//tests 
+		console.log(totalizadorDoMes1.saldo === 100.5);
+		console.log(totalizadorDoMes2.saldo === -494.45);
+		console.log(totalizadorDoMes3.saldo === -983.89);
 	</script>
 </html>
