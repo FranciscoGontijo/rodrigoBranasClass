@@ -33,7 +33,7 @@
 
         function calcularSaldo (mes, saldoInicial, lancamentos) {
 			console.log(mes);
-            totalizadorDoMes = {saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0}
+            totalizadorDoMes = {saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [],}
 			totalizadorDoMes.saldo = saldoInicial
 			for (lancamento of lancamentos) {
 				if (lancamento.tipo === "receita") {
@@ -48,10 +48,10 @@
             for (lancamento of lancamentos) {
                 if (lancamento.tipo === "despesa") {
                     percentual = arredondar((lancamento.valor / Math.abs(totalizadorDoMes.despesas)) * 100);
+                    totalizadorDoMes.distribuicaoDeDespesas.push({categoria: lancamento.categoria, percentual});
                     console.log(`${lancamento.categoria}: ${percentual}%`);
                 }
             }
-            console.log(totalizadorDoMes.despesas);
 			estaNegativo = totalizadorDoMes.saldo < 0
 			if (estaNegativo) {
 				totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo);
