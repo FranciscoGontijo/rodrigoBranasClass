@@ -8,12 +8,13 @@
 				this.nome = nome;
 				this.saldoInicial = saldoInicial;
 				this.totalizadorDoMes = { saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [] };
-				this.lancamento = [];
+				this.lancamentos = [];
+			}
+
+			adicionarLancamento (lancamento) {
+				this.lancamentos.push(lancamento);
 			}
 		}
-
-		const test1 = new Mes('Janeiro', 15);
-		console.log(test1);
 
 		class Lancamento {
 
@@ -32,6 +33,10 @@
 				this.valor = valor;
 			}
 		}
+
+		const janeiro = new Mes('janeiro', 0);
+		janeiro.adicionarLancamento(new Lancamento("salario", 'receita', 3000));
+		console.log(janeiro);
 
 		function arredondar (valor) {
 			return Math.round(valor*100)/100;
