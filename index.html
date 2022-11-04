@@ -4,9 +4,17 @@
 		class Mes {
 
 			constructor(nome, saldoInicial) {
-
+				if (nome === '') throw new Error("Mes invalido: O nome e obrigatorio");
+				this.nome = nome;
+				this.saldoInicial = saldoInicial;
+				this.totalizadorDoMes = { saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [] };
+				this.lancamento = [];
 			}
 		}
+
+		const test1 = new Mes('Janeiro', 15);
+		console.log(test1);
+
 		class Lancamento {
 
 			constructor (categoria, tipo, valor) {
