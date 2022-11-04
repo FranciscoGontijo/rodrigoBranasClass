@@ -45,7 +45,7 @@
 			// }
 
 			calcularSaldo () {
-				this.totalizadorDoMes.saldo = saldoInicial;
+				this.totalizadorDoMes.saldo = this.saldoInicial;
 				for (const lancamento of this.lancamentos) {
 					if (lancamento.tipo === "receita") {
 						this.totalizadorDoMes.saldo += lancamento.valor;
@@ -132,6 +132,7 @@
 		janeiro.adicionarLancamento(new Lancamento("Farmácia", "despesa", 100));
 		janeiro.calcularSaldo();
 		console.log(janeiro)
+
 		const fevereiro = new Mes('fevereiro', janeiro.totalizadorDoMes.saldo);
 		fevereiro.adicionarLancamento(new Lancamento("Salário", "receita", 3000));
 		fevereiro.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
