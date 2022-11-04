@@ -1,6 +1,24 @@
 <html>
 	<script>
 
+		class Lancamento {
+
+			constructor (categoria, tipo, valor) {
+				if (tipo !== "receita" && tipo !== "despesa") {
+					throw new Error("Lançamento Inválido: Tipo deve ser receita ou despesa");
+				}
+				if (valor <= 0) {
+					throw new Error("Lançamento Inválido: Valor deve ser maior que zero");
+				}
+				if (categoria === "") {
+					throw new Error("Lançamento Inválido: A Categoria é obrigatória");
+				}
+				this.categoria = categoria;
+				this.tipo = tipo;
+				this.valor = valor;
+			}
+		}
+
 		class Mes {
 
 			constructor(nome, saldoInicial) {
@@ -28,7 +46,7 @@
 
 			calcularSaldo () {
 				this.totalizadorDoMes.saldo = saldoInicial;
-				for (const lancamento of lancamentos) {
+				for (const lancamento of this.lancamentos) {
 					if (lancamento.tipo === "receita") {
 						this.totalizadorDoMes.saldo += lancamento.valor;
 						this.totalizadorDoMes.receitas += lancamento.valor;
@@ -38,7 +56,7 @@
 						this.totalizadorDoMes.despesas += lancamento.valor;
 					}
 				}
-				this.totalizadorDoMes.distribuicaoDeDespesas = distribuirDespesas(lancamentos, this.totalizadorDoMes.despesas);
+				this.totalizadorDoMes.distribuicaoDeDespesas = distribuirDespesas(this.lancamentos, this.totalizadorDoMes.despesas);
 				const estaNegativo = this.totalizadorDoMes.saldo < 0;
 				if (estaNegativo) {
 					this.totalizadorDoMes.juros = calcularJuros(this.totalizadorDoMes.saldo);
@@ -46,25 +64,7 @@
 				} else {
 					this.totalizadorDoMes.rendimentos = calcularRendimentos(this.totalizadorDoMes.saldo);
 					this.totalizadorDoMes.saldo = arredondar(this.totalizadorDoMes.saldo + this.totalizadorDoMes.rendimentos);
-				} return this.totalizadorDoMes;
-			}
-		}
-
-		class Lancamento {
-
-			constructor (categoria, tipo, valor) {
-				if (tipo !== "receita" && tipo !== "despesa") {
-					throw new Error("Lançamento Inválido: Tipo deve ser receita ou despesa");
-				}
-				if (valor <= 0) {
-					throw new Error("Lançamento Inválido: Valor deve ser maior que zero");
-				}
-				if (categoria === "") {
-					throw new Error("Lançamento Inválido: A Categoria é obrigatória");
-				}
-				this.categoria = categoria;
-				this.tipo = tipo;
-				this.valor = valor;
+				} 
 			}
 		}
 
