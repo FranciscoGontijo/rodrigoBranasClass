@@ -119,19 +119,20 @@
 		fevereiro.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
 		fevereiro.calcularSaldo();
 		console.log(fevereiro)
-		// const totalizadorDoMes2 = calcularSaldo("fevereiro", totalizadorDoMes1.saldo, lancamentosFevereiro);
-		// console.log(totalizadorDoMes2);
-		// const lancamentosMarco = [
-		// 	marco.adicionarLancamento(new Lancamento("Salário", "receita", 4000)); 
-		// 	marco.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200)); 
-		// 	marco.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 200)); 
-		// 	marco.adicionarLancamento(new Lancamento("Conta de Água", "despesa", 100)); 
-		// 	marco.adicionarLancamento(new Lancamento("Internet", "despesa", 200)); 
-		// 	marco.adicionarLancamento(new Lancamento("Transporte", "despesa", 500)); 
-		// 	marco.adicionarLancamento(new Lancamento("Lazer", "despesa", 800)); 
-		// 	marco.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000)); 
-		// 	marco.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
-		// ]
+
+
+		const marco = new Mes('marco', fevereiro.totalizadorDoMes.saldo);
+		marco.adicionarLancamento(new Lancamento("Salário", "receita", 4000)); 
+		marco.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200)); 
+		marco.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 200)); 
+		marco.adicionarLancamento(new Lancamento("Conta de Água", "despesa", 100)); 
+		marco.adicionarLancamento(new Lancamento("Internet", "despesa", 200)); 
+		marco.adicionarLancamento(new Lancamento("Transporte", "despesa", 500)); 
+		marco.adicionarLancamento(new Lancamento("Lazer", "despesa", 800)); 
+		marco.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000)); 
+		marco.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
+		marco.calcularSaldo();
+		console.log(marco);
 		// const totalizadorDoMes3 = calcularSaldo("marco", totalizadorDoMes2.saldo, lancamentosMarco);
 		// console.log(totalizadorDoMes3);
 		// const acumuladoAno = totalizadorDoMes3.saldo;
@@ -141,6 +142,6 @@
 		//tests 
 		console.log(janeiro.totalizadorDoMes.saldo === 100.5);
 		console.log(fevereiro.totalizadorDoMes.saldo === -494.45);
-		// console.log(totalizadorDoMes3.saldo === -983.89);
+		console.log(marco.totalizadorDoMes.saldo === -983.89);
 	</script>
 </html>
