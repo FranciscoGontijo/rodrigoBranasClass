@@ -33,17 +33,6 @@
 				this.lancamentos.push(lancamento);
 			}
 
-			// calcularSaldo () {
-			// 	for (const lancamento of this.lancamentos) {
-			// 		if (lancamento.tipo === "receita") {
-			// 			this.totalizadorDoMes.saldo += lancamento.valor;
-			// 		}
-			// 		if (lancamento.tipo === "despesa") {
-			// 			this.totalizadorDoMes.saldo -= lancamento.valor;
-			// 		}
-			// 	}
-			// }
-
 			calcularSaldo () {
 				this.totalizadorDoMes.saldo = this.saldoInicial;
 				for (const lancamento of this.lancamentos) {
