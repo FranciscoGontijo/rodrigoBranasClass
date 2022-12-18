@@ -2,57 +2,6 @@
 	<script src="lancamento.js"></script>
 	<script src="mes.js"></script>
 	<script src="util.js"></script>
-	<script>
-
-		const saldoInicial = 0;
-		const janeiro = new Mes('janeiro', 0);
-		janeiro.adicionarLancamento(new Lancamento("Salário", "receita", 3000));
-		janeiro.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1000));
-		janeiro.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 200));
-		janeiro.adicionarLancamento(new Lancamento("Conta de Água", "despesa", 100));
-		janeiro.adicionarLancamento(new Lancamento("Internet", "despesa", 100));
-		janeiro.adicionarLancamento(new Lancamento("Transporte", "despesa", 300));
-		janeiro.adicionarLancamento(new Lancamento("Lazer", "despesa", 300));
-		janeiro.adicionarLancamento(new Lancamento("Alimentação", "despesa", 500));
-		janeiro.adicionarLancamento(new Lancamento("Condomínio", "despesa", 300));
-		janeiro.adicionarLancamento(new Lancamento("Farmácia", "despesa", 100));
-		janeiro.calcularSaldo();
-		console.log(janeiro)
-
-		const fevereiro = new Mes('fevereiro', janeiro.totalizadorDoMes.saldo);
-		fevereiro.adicionarLancamento(new Lancamento("Salário", "receita", 3000));
-		fevereiro.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
-		fevereiro.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 250));
-		fevereiro.adicionarLancamento(new Lancamento("Conta de Água", "despesa", 100));
-		fevereiro.adicionarLancamento(new Lancamento("Internet", "despesa", 100));
-		fevereiro.adicionarLancamento(new Lancamento("Transporte", "despesa", 500));
-		fevereiro.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000));
-		fevereiro.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
-		fevereiro.calcularSaldo();
-		console.log(fevereiro)
-
-
-		const marco = new Mes('marco', fevereiro.totalizadorDoMes.saldo);
-		marco.adicionarLancamento(new Lancamento("Salário", "receita", 4000)); 
-		marco.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200)); 
-		marco.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 200)); 
-		marco.adicionarLancamento(new Lancamento("Conta de Água", "despesa", 100)); 
-		marco.adicionarLancamento(new Lancamento("Internet", "despesa", 200)); 
-		marco.adicionarLancamento(new Lancamento("Transporte", "despesa", 500)); 
-		marco.adicionarLancamento(new Lancamento("Lazer", "despesa", 800)); 
-		marco.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000)); 
-		marco.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
-		marco.calcularSaldo();
-		console.log(marco);
-		// const totalizadorDoMes3 = calcularSaldo("marco", totalizadorDoMes2.saldo, lancamentosMarco);
-		// console.log(totalizadorDoMes3);
-		// const acumuladoAno = totalizadorDoMes3.saldo;
-		// console.log("ano");
-		// console.log(acumuladoAno);
-
-		//tests 
-		console.log(janeiro.totalizadorDoMes.saldo === 100.5);
-		console.log(fevereiro.totalizadorDoMes.saldo === -494.45);
-		console.log(marco.totalizadorDoMes.saldo === -983.89);
-	</script>
+	<script src="main.js"></script>
+	<script src="teste.js"></script>
 </html>
