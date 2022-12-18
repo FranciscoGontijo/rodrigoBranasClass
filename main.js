@@ -13,7 +13,7 @@ janeiro.adicionarLancamento(new Lancamento("Farmácia", "despesa", 100));
 janeiro.calcularSaldo();
 console.log(janeiro)
 
-const fevereiro = new Mes('fevereiro', janeiro.totalizadorDoMes.saldo);
+const fevereiro = new Mes('fevereiro', janeiro.totalizador.saldo);
 fevereiro.adicionarLancamento(new Lancamento("Salário", "receita", 3000));
 fevereiro.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
 fevereiro.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 250));
@@ -26,7 +26,7 @@ fevereiro.calcularSaldo();
 console.log(fevereiro)
 
 
-const marco = new Mes('marco', fevereiro.totalizadorDoMes.saldo);
+const marco = new Mes('marco', fevereiro.totalizador.saldo);
 marco.adicionarLancamento(new Lancamento("Salário", "receita", 4000));
 marco.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
 marco.adicionarLancamento(new Lancamento("Conta de Luz", "despesa", 200));
