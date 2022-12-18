@@ -38,3 +38,19 @@ marco.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000));
 marco.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
 marco.calcularSaldo();
 console.log(marco);
+
+// janeiro.adicionarLancamento(new Lancamento("Escola", "despesa", 500));
+// janeiro.calcularSaldo();
+// fevereiro.saldoInicial = janeiro.totalizador.saldo;
+// fevereiro.calcularSaldo();
+// marco.saldoInicial = fevereiro.totalizador.saldo;
+// marco.calcularSaldo();
+
+const ano2022 = new Ano();
+ano2022.adicionarMes(janeiro);
+ano2022.adicionarMes(fevereiro);
+ano2022.adicionarMes(marco);
+console.log(ano2022);
+console.log(ano2022.meses);
+const saldoAno = ano2022.calcularSaldo();
+console.log(saldoAno);

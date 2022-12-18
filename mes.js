@@ -4,7 +4,7 @@ class Mes {
         if (nome === '') throw new Error("Mes invalido: O nome e obrigatorio");
         this.nome = nome;
         this.saldoInicial = saldoInicial;
-        this.totalizador = { saldo: 0, saldoInicial, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [] };
+        this.totalizador = { saldo: 0, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [] };
         this.lancamentos = [];
     }
 
@@ -13,6 +13,7 @@ class Mes {
     }
 
     calcularSaldo () {
+        this.totalizador = { saldo: 0, juros: 0, rendimentos: 0, receitas: 0, despesas: 0, distribuicaoDeDespesas: [] };
         this.totalizador.saldo = this.saldoInicial;
         this.apurarReceitas();
         this.apurarDespesas()
@@ -47,7 +48,7 @@ class Mes {
                 distribuicaoDeDespesas.push({ categoria: lancamento.categoria, percentual });
             }
         }
-        this.totalizador.distribuicaoDeDespesas = distribuicaoDeDespesas
+        this.totalizador.distribuicaoDeDespesas = distribuicaoDeDespesas;
     }
 
     calcularJuros (valor) {
