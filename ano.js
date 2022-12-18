@@ -8,11 +8,11 @@ class Ano {
     }
 
     calcularSaldo () {
-        let saldoTotal = 0;
-        for (const mes of this.meses) {
-            console.log(mes);
-            saldoTotal += mes.totalizador.saldo;
-        }
-        return saldoTotal;
-    }
+		let saldoInicial = 0;
+		for (const mes of this.meses) {
+			mes.saldoInicial = saldoInicial;
+			mes.calcularSaldo();
+			saldoInicial = mes.totalizador.saldo;
+		}
+	}
 };
