@@ -50,3 +50,28 @@ marco.adicionarLancamento(new Lancamento("Escola", "despesa", 500));
 ano.calcularSaldo();
 
 console.log(ano.meses);
+
+function addElement(parent, elementType, text) {
+    const element = document.createElement(elementType);
+    if (text) {
+        element.innerText = text;
+    }
+    parent.appendChild(element);
+}
+
+function renderizar() {
+    const app = document.getElementById('app');
+
+    for (const mes of ano.meses) {
+        addElement(app, 'h3', mes.nome);
+        for (const lancamento of mes.lancamentos) {
+            const textLancamento = lancamento.tipo + ' ' + lancamento.categoria + " : " + lancamento.valor;
+            addElement(app, 'p', textLancamento);
+        }
+        const textSaldo = "Saldo no final do mes: " + mes.totalizador.saldo
+        addElement(app, 'h4', textSaldo);
+        addElement(app, 'hr');
+    }
+};
+
+renderizar();
