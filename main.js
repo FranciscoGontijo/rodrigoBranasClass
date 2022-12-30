@@ -33,18 +33,20 @@ marco.adicionarLancamento(new Lancamento("Lazer", "despesa", 800));
 marco.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000));
 marco.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
 
+const abril = new Mes('abril');
+abril.adicionarLancamento(new Lancamento("Salário", "receita", 4000));
+
+
 const ano = new Ano();
 ano.adicionarMes(janeiro);
 ano.adicionarMes(fevereiro);
 ano.adicionarMes(marco);
+ano.adicionarMes(abril);
 ano.calcularSaldo();
-console.log(janeiro);
-console.log(fevereiro); 
-console.log(marco);
 
 janeiro.adicionarLancamento(new Lancamento("Escola", "despesa", 500));
+fevereiro.adicionarLancamento(new Lancamento("Escola", "despesa", 400));
+marco.adicionarLancamento(new Lancamento("Escola", "despesa", 500));
 ano.calcularSaldo();
 
-console.log(janeiro);
-console.log(fevereiro);
-console.log(marco);
+console.log(ano.meses);
